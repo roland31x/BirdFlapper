@@ -65,10 +65,6 @@ fun App() {
     val pipeSpacing = 300f // distance between pipes
     val pipeStartX = 800f  // off-screen start
 
-
-
-    var isGameOver by remember { mutableStateOf(false) }
-
     var gameState by remember { mutableStateOf(GameState.START) }
 
     val birdImage = useResource("bird.png") {
