@@ -1,18 +1,19 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "1.9.0"
+    id("org.jetbrains.compose") version "1.5.10"
+    application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
-
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation("org.jetbrains.compose.material:material-desktop:1.5.10")
+    implementation(compose.desktop.currentOs)
 }
 
-tasks.test {
-    useJUnitPlatform()
+application {
+    mainClass.set("MainKt")
 }
